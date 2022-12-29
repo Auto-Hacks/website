@@ -1,60 +1,59 @@
 import React from "react"
-import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
-import Post, { PostProps } from "../components/Post"
+import useTimer from "../lib/useTimer"
 
-export const getStaticProps: GetStaticProps = async () => {
-  const feed = [
-    {
-      id: "1",
-      title: "Prisma is the perfect ORM for Next.js",
-      content: "[Prisma](https://github.com/prisma/prisma) and Next.js go _great_ together!",
-      published: false,
-      author: {
-        name: "Nikolas Burk",
-        email: "burk@prisma.io",
-      },
-    },
-  ]
-  return { 
-    props: { feed }, 
-    revalidate: 10 
-  }
-}
 
-type Props = {
-  feed: PostProps[]
-}
-
-const Blog: React.FC<Props> = (props) => {
+const Homepage: React.FC = () => {
   return (
     <Layout>
-      <div className="page">
-        <h1>Public Feed</h1>
-        <main>
-          {props.feed.map((post) => (
-            <div key={post.id} className="post">
-              <Post post={post} />
-            </div>
-          ))}
-        </main>
-      </div>
-      <style jsx>{`
-        .post {
-          background: white;
-          transition: box-shadow 0.1s ease-in;
-        }
-
-        .post:hover {
-          box-shadow: 1px 1px 3px #aaa;
-        }
-
-        .post + .post {
-          margin-top: 2rem;
-        }
-      `}</style>
+        <h1><b>AutoHacks</b> will start in</h1>
+        <Timer />
+        <h2 className="subhead">Join us for a hybrid hackathon from <b>20</b> to <b>22</b> January</h2>
+        <h2 className="subhead">Build a hack to automate away the repetitive tasks in your life and win awesome prizes!</h2>
+        <div className="text-center">
+            <a href="/register" className="btn btn-dark btn-lg" role="button" aria-pressed="true"><h2>Register Now</h2></a>
+        </div>
+        <style jsx>{`
+            .subhead {
+               margin-top: 50px;
+            }
+            h1 {
+                margin-bottom: 50px;
+            }
+            a {
+                margin-top: 70px;
+                padding-top: 20px;
+            }
+            .btn {
+            }
+        `}</style>
     </Layout>
   )
 }
 
-export default Blog
+const Timer = () => {
+    let timeLeft : any;
+    let _ : any;
+    [timeLeft, _] = useTimer(new Date(2023, 0, 20, 17, 0, 0))
+    return (
+       <div>
+        { timeLeft.seconds % 2 == 0 && <pre className="timer-text">{timeLeft.days}D : {timeLeft.hours}H : {timeLeft.minutes}M : {timeLeft.seconds}S</pre>}
+        { timeLeft.seconds % 2 != 0 && <pre className="timer-text">{timeLeft.days}D   {timeLeft.hours}H   {timeLeft.minutes}M   {timeLeft.seconds}S</pre>}
+      <style jsx>{`
+          .timer-text {
+              font-family: Syne-Mono;
+              font-size: 4vw;
+              text-align: center;
+          }
+          @media (max-width: 1200px){
+              .timer-text {
+                  font-size: 6.5vw
+              }
+          }
+      `}</style>
+      </div>
+
+  )
+}
+
+export default Homepage
