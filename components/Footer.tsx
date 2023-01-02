@@ -14,8 +14,8 @@ const Footer = () => {
         </div>
           <div className="footer-item">
               <h3><b>Navigation</b></h3>
-              <h5><a href="/about">About Us</a></h5>
-              <h5><a href="/about#sponsors">Sponsors</a></h5>
+              <h5><Link href="/about"><a>About Us</a></Link></h5>
+              <h5><Link href="/about#sponsors"><a>Sponsors</a></Link></h5>
               <h5><a target="_blank" href="https://info.devpost.com/guidelines">Code of Conduct</a></h5>
         </div>
           <div className="footer-item">

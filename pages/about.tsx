@@ -29,7 +29,7 @@ const Homepage: React.FC = props => {
       <h3>How can I contact/sponsor AutoHacks?</h3>
       <p>If you're interested in contacting or sponsoring AutoHacks, please email us at <a href="mailto:autohackspsn@gmail.com">autohackspsn@gmail.com</a>. We'll get back to you as soon as possible.</p>
     </div>
-    <div className="sponsors">
+    <div id="sponsors" className="sponsors">
         <h1>Our Sponsors</h1>
         <div className="sponsor-logos">
             { props["sponsors"].map(sponsor=><a key={sponsor.name} href={sponsor.url}><img className="logo-img" src={`/static/img/sponsors/${sponsor.name}.png`} /></a>
