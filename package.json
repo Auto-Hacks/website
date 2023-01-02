@@ -11,21 +11,12 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@google-cloud/local-auth": "2.1.0",
-    "@prisma/client": "^4.8.0",
     "bootstrap": "^5.2.3",
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.0",
-    "express-rate-limit": "^6.7.0",
-    "googleapis": "105",
     "next": "12.0.10",
-    "nodemailer": "^6.8.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-markdown": "8.0.0",
     "react-spring": "^9.6.1",
-    "react-toastify": "^9.1.1",
-    "request-ip": "^3.3.0"
+    "react-toastify": "^9.1.1"
   },
   "devDependencies": {
     "@types/node": "17.0.14",
