@@ -32,7 +32,7 @@ const Homepage: React.FC = props => {
     <div className="sponsors">
         <h1>Our Sponsors</h1>
         <div className="sponsor-logos">
-            { props.sponsors.map(sponsor=><a key={sponsor.name} href={sponsor.url}><img className="logo-img" src={`/static/img/sponsors/${sponsor.name}.png`} /></a>
+            { props["sponsors"].map(sponsor=><a key={sponsor.name} href={sponsor.url}><img className="logo-img" src={`/static/img/sponsors/${sponsor.name}.png`} /></a>
 )}
         </div>
     </div>
