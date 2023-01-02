@@ -59,7 +59,7 @@ const Navbar = () => {
           font-weight: bold;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 990px) {
             .nav-link {
               margin-left: 50px;
               border-radius: 5px;
@@ -80,7 +80,7 @@ const Navbar = () => {
             }
         }
 
-        @media (max-width: 599px){
+        @media (max-width: 989px){
             .nav-logo {
                 width: 50vw;
                 margin-left: 20px;

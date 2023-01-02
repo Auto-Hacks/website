@@ -55,10 +55,6 @@ const Layout: React.FC<Props> = (props) => (
 
       }
 
-      p {
-          word-break: break-all;
-          white-space: pre-line;
-      }
       pre {
           word-break: break-all;
           white-space: pre-wrap;
