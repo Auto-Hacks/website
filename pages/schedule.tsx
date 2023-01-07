@@ -14,8 +14,8 @@ const Schedule: React.FC = () => {
             }
             .frame {
                 margin: auto;
-                width: 100vw;
-                height: 1900px;
+                width: 100%;
+                height: 70vh;
             }
         `}</style>
         </Layout>

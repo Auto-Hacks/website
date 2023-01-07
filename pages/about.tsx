@@ -32,7 +32,7 @@ const Homepage: React.FC = props => {
     <div id="sponsors" className="sponsors">
         <h1>Our Sponsors</h1>
         <div className="sponsor-logos">
-            { props["sponsors"].map(sponsor=><a target="_blank" key={sponsor.name} href={sponsor.url}><img className="logo-img" src={`/static/img/sponsors/${sponsor.name}.png`} /></a>
+            { props["sponsors"].map(sponsor=><a target="_blank" className="sponsor-a" key={sponsor.name} href={sponsor.url}><img className="logo-img" src={`/static/img/sponsors/${sponsor.name}.png`} /></a>
 )}
         </div>
     </div>
@@ -40,6 +40,9 @@ const Homepage: React.FC = props => {
   <style jsx>{`
     .sponsors {
         margin-top: 100px;
+    }
+    .sponsor-a {
+        display: flex;
     }
     .sections-container {
       display: flex;
@@ -63,6 +66,7 @@ const Homepage: React.FC = props => {
     .logo-img {
         max-width: 100%;
         max-height: 100%;
+        object-fit: contain;
     }
     h1 {
         margin-bottom: 50px;
